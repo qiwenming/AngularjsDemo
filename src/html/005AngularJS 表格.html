@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AngularJS 表格</title>
+</head>
+<body ng-app="myApp" ng-controller="tableCtrl">
+
+<table>
+    <!--<tr ng-repeat="x in tableDatas | orderBy:'age'">-->
+        <!--<td>{{$index+1}}<td>-->
+        <!--<td>{{x.name}}<td>-->
+        <!--<td>{{x.age}}<td>-->
+    <!--</tr>-->
+
+    <!-- //我们来个奇偶判断-->
+    <tr ng-repeat="x in tableDatas | orderBy:'age'" >
+        <td>{{$index+1}}<td>
+        <td ng-if="$even" style="background-color:#c0c0c0">{{x.name}}<td>
+        <td ng-if="$odd" style="background-color:#ff00ff">{{x.name}}<td>
+        <td>{{x.age}}<td>
+    </tr>
+</table>
+<br>
+显示序号 ($index)<br>
+使用 $even 和 $odd (奇偶)
+
+<script src="../js/angular.js"></script>
+<script>
+    var app = angular.module('myApp',[]);
+    app.controller('tableCtrl',function($scope){
+        $scope.tableDatas = [
+            {name:"qwm",age:10},
+            {name:"java",age:21},
+            {name:"xiaomign",age:30},
+            {name:"mmm",age:18},
+            {name:"kk",age:35},
+        ];
+    });
+</script>
+<style>
+    table ,th, td   {
+        border: 1px solid grey;
+        border-collapse: collapse;
+        padding: 5px;
+    }
+    table tr:nth-child(odd) {
+        background-color: #f1f1f1;
+    }
+    table tr:nth-child(even) {
+        background-color: #ffffff;
+    }
+</style>
+</body>
+</html>
+

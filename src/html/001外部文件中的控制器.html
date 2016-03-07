@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="../js/angular.js"></script>
+    <title>外部文件中的控制器</title>
+</head>
+<body ng-app="myApp">
+
+<div ng-controller="myCtrl">
+    <span ng-model="name">{{name}}</span><br>
+
+    <span ng-model="name">{{name1}}</span><br>
+
+    <span ng-model="name">{{name2}}</span><br>
+
+</div>
+
+<!--<script>-->
+    <!--var app = angular.module('myApp',[]);-->
+    <!--app.controller('myCtrl',function($scope){-->
+        <!--$scope.name = "xxxxxxx";-->
+    <!--});-->
+<!--</script>-->
+
+
+<div ng-controller='namesCtrl'>
+    <ul>
+        <li ng-repeat="person in persons"> {{person.name + "--" +person.age}}</li>
+    </ul>
+</div>
+
+
+<script src="001Person.js"></script>
+
+
+
+
+
+
+</body>
+</html>
+

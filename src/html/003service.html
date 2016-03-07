@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Service</title>
+</head>
+<body ng-app="myApp">
+
+<hr/>
+<h2>$location 服务</h2>
+<div ng-controller='locationCtrl' >
+    <h5> 文件地址绝对是：{{absUrl}}</h5>
+    <h5> 文件path是：{{path}}</h5>
+</div>
+
+<hr/>
+<h2>$http服务</h2>
+<div ng-controller='httpCtrl'>
+    <div ng-repeat="recoder in records | orderBy :'Country'">
+        {{recoder.name --- recoder.City -- recoder.Country}}
+    </div>
+</div>
+
+<hr>
+<h2>$timeout服务</h2>
+<div ng-controller='timeoutCtrl'>
+    <p >{{timeouttest}}</p>
+</div>
+
+<hr>
+<h2>$interval服务</h2>
+<div ng-controller='intervalCtrl'>
+    <h3>{{nowtime}}<h3>
+</div>
+
+<hr>
+<h2>创建自己的服务</h2>
+<div ng-controller='myServiceCtrl'>
+    <input type="number" ng-model="num"/><br>
+    {{num}}<br>
+    {{numx}}<br>
+    {{numb}}
+
+</div>
+
+<h2>创建自己的服务 在过滤器中使用</h2>
+<div>
+    <input type="number" ng-model="numfil"/><br>
+    {{numfil}}<br>
+    {{233 | myFilterX}}<br>
+    {{233 | myFilterB}}
+
+</div>
+
+<script src="../js/angular.js"></script>
+<script src="003.js"></script>
+</body>
+</html>
+
+
+

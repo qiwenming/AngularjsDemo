@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AngularJS 全局 API</title>
+</head>
+<body>
+
+<h4>AngularJS 全局 API</h4>
+<pre>
+    AngularJS 全局 API 用于执行常见任务的 JavaScript 函数集合，如：
+    比较对象
+    迭代对象
+    转换对象
+
+    全局 API 函数使用 angular 对象进行访问。
+    以下列出了一些通用的 API 函数：
+
+    API	描述
+    angular.lowercase()	转换字符串为小写
+    angular.uppercase()	转换字符串为大写
+    angular.isString()	判断给定的对象是否为字符串，如果是返回 true。
+    angular.isNumber()	判断给定的对象是否为数字，如果是返回 true。
+</pre>
+
+<div ng-app="myApp" ng-controller="gapiCtrl">
+
+    {{value11}}<br>
+
+    转成大写：{{upStr}}<br>
+    转成小写：{{lowStr}}<br>
+    是字符吗：{{isStr}}<br>
+    是数组吗：{{isNum}}<br>
+
+</div>
+
+<script src="../js/angular.js"></script>
+<script>
+    var app = angular.module('myApp',[]);
+    app.controller('gapiCtrl',function($scope){
+        $scope.value11 = "QIwenMing";
+        $scope.upStr = angular.uppercase( $scope.value11 );
+        $scope.lowStr = angular.lowercase( $scope.value11 );
+        $scope.isStr = angular.isString( $scope.value11 );
+        $scope.isNum = angular.isNumber( $scope.value11 );
+    });
+</script>
+
+</body>
+</html>
